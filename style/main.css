@@ -1,0 +1,29 @@
+.main {
+  margin-left: 30px;
+}
+.title {
+  color: rgb(106, 116, 111);
+  font-weight: bold;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.input-number {
+  width: 300px;
+  margin: 10px 0;
+}
+.btn {
+  width: 150px;
+  height: 30px;
+  background-color: rgb(124, 190, 192);
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+}
+.try {
+  font-weight: bold;
+  text-transform: capitalize;
+}
