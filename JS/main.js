@@ -1,13 +1,10 @@
 "user strict";
 
-//Función para generar un número aleatorio
 function getRandomNumber(max) {
   return Math.ceil(Math.random() * 100);
 }
 const numberRandom = getRandomNumber();
 console.log(numberRandom);
-
-//Función para comprobar si es el número correcto.
 
 const numberElement = document.querySelector(".js-number");
 const btnTryElement = document.querySelector(".js-tryBtn");
@@ -43,14 +40,3 @@ function handleCount() {
 }
 
 btnTryElement.addEventListener("click", handleUpdateBtn);
-
-const btnResetElement = document.querySelector(".js-btn-reset");
-
-function handleResetBtn() {
-  const btnReset = btnResetElement;
-  if (numberElement !== "" && triesElement.innerHTML !== "") {
-    textElement.innerHTML = textElement;
-    triesElement.innerHTML = triesElement;
-  }
-}
-btnResetElement.addEventListener("click", handleResetBtn);
