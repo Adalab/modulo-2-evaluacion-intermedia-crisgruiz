@@ -27,3 +27,6 @@
   font-weight: bold;
   text-transform: capitalize;
 }
+.btn-reset {
+  display: none;
+}

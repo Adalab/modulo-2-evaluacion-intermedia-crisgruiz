@@ -14,13 +14,16 @@ const btnTryElement = document.querySelector(".js-tryBtn");
 const textElement = document.querySelector(".js-message");
 const triesElement = document.querySelector(".js-numberTries");
 
+function handleUpdateBtn() {
+  handleNumber();
+  handleCount();
+}
+
 function handleNumber() {
   const numberValue = parseInt(numberElement.value);
   if (numberValue === numberRandom) {
-    TextElement.innerHTML = "¡Enhorabuena! ¡¡¡Has ganado campeona!!!";
-  } else if (numberValue > 100) {
-    textElement.innerHTML = "Tienes que introducir un número entre 1 y 100";
-  } else if (numberValue < 1) {
+    textElement.innerHTML = "¡Enhorabuena! ¡¡¡Has ganado campeona!!!";
+  } else if (numberValue > 100 || numberValue < 1) {
     textElement.innerHTML = "Tienes que introducir un número entre 1 y 100";
   } else if (numberValue < numberRandom) {
     textElement.innerHTML =
@@ -33,14 +36,21 @@ function handleNumber() {
   }
 }
 
-btnTryElement.addEventListener("click", handleNumber);
-
-//Función Contador
-
 let count = 0;
 function handleCount() {
   count++;
   triesElement.innerHTML = count;
 }
 
-btnTryElement.addEventListener("click", handleCount);
+btnTryElement.addEventListener("click", handleUpdateBtn);
+
+const btnResetElement = document.querySelector(".js-btn-reset");
+
+function handleResetBtn() {
+  const btnReset = btnResetElement;
+  if (numberElement !== "" && triesElement.innerHTML !== "") {
+    textElement.innerHTML = textElement;
+    triesElement.innerHTML = triesElement;
+  }
+}
+btnResetElement.addEventListener("click", handleResetBtn);
